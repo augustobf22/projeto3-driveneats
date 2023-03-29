@@ -15,31 +15,57 @@ body {
     position:fixed;
     top:0px;
 
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header-content {
+    margin-left:20px;
 }
 
 .content {
     background-color: #EEEEEE;
     margin:92px 0px;
     width:100%;
+    display:flex;
+    flex-direction: column;
 }
 
 .description {
     height:65px;
     width:100%;
+    
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .food, .drink, .dessert {
     display:flex;
     justify-content: flex-start;
 
-    overflow-x: scroll;
+    overflow-x:scroll;
 }
 
 .box-food, .box-drink, .box-dessert {
     width:172px;
     margin: 0px 8px;
-    background-color:green;
+    flex: 0 0 auto;
+
+    box-shadow: 0px 0px 10px -4px #00000040;
+    border-radius: 9px;
+    background-color: #ffffff;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
 
 .food {
     height: 216px;
@@ -65,13 +91,43 @@ body {
     height:197px;
 }
 
+.box-content {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    width:144px;
+}
+
+.box-content > *{
+    margin: 5px 0px;
+}
+
 .footer {
     height: 92px;
     width:100%;
-    background-color: black;
+    background-color: #ffffff;
 
     position:fixed;
     bottom:0px; 
+    right:0px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    width: 364px;
+    height: 61px;
+    
+    background-color: #CBCBCB;
+    border-radius: 50px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 { /*fonte do logo driveneats*/
