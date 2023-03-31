@@ -8,8 +8,6 @@ function updateButton() {
         but.classList.add("buttonActive");
         but.innerHTML = "<p>Finalizar pedido</p>"
         but.disabled = false;
-    } else {
-        but.disabled = true;
     }
 }
 
