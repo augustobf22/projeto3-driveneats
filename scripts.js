@@ -1,29 +1,47 @@
-function selectFood(thisBox) {
-    const alreadySelected = document.querySelector('.greenBorder');
+function updateButton() {
+    const foodSelected = document.querySelector('.box-food.greenBorder');
+    const drinkSelected = document.querySelector('.box-drink.greenBorder');
+    const dessertSelected = document.querySelector('.box-dessert.greenBorder');
+    
+    const but = document.querySelector('button');
+    if(foodSelected && drinkSelected && dessertSelected) {
+        but.classList.add("buttonActive");
+        but.innerHTML = "<p>Finalizar pedido</p>"
+        but.disabled = false;
+    } else {
+        but.disabled = true;
+    }
+}
 
-    if(alreadySelected !== null) {
-        alreadySelected.classList.remove("greenBorder");
+function selectFood(thisBox) {
+    const foodSelected = document.querySelector('.box-food.greenBorder');
+
+    if(foodSelected !== null) {
+        foodSelected.classList.remove("greenBorder");
     }
     
     thisBox.classList.add("greenBorder");
+    updateButton();
 }
 
 function selectDrink(thisBox) {
-    const alreadySelected = document.querySelector('.greenBorder');
+    const drinkSelected = document.querySelector('.box-drink.greenBorder');
 
-    if(alreadySelected !== null) {
-        alreadySelected.classList.remove("greenBorder");
+    if(drinkSelected !== null) {
+        drinkSelected.classList.remove("greenBorder");
     }
     
     thisBox.classList.add("greenBorder");
+    updateButton();
 }
 
 function selectDessert(thisBox) {
-    const alreadySelected = document.querySelector('.greenBorder');
+    const dessertSelected = document.querySelector('.box-dessert.greenBorder');
 
-    if(alreadySelected !== null) {
-        alreadySelected.classList.remove("greenBorder");
+    if(dessertSelected !== null) {
+        dessertSelected.classList.remove("greenBorder");
     }
     
     thisBox.classList.add("greenBorder");
+    updateButton();
 }

@@ -33,6 +33,7 @@
                     <h5>Um pouco de batata, um pouco de salada</h5>
                     <h6>R$ 14,90</h6>
                 </div>
+                <ion-icon name="checkmark-circle"></ion-icon>
             </div>
             <div class="box-food" onclick="selectFood(this)">
                 <div class="box-content">
@@ -112,11 +113,13 @@
     </div>
     <div class="footer">
         <div class="footer-content">
-            <button>
+            <button type="button" disabled>
                 <p>Selecione os 3 itens para fechar o pedido</p>
             </button>
         </div>
     </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
