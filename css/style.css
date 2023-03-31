@@ -1,5 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #EEEEEE;
 }
 
 * {
@@ -27,7 +28,6 @@ body {
 }
 
 .content {
-    background-color: #EEEEEE;
     margin:92px 0px;
     width:100%;
     display:flex;
@@ -107,7 +107,7 @@ body {
 .footer {
     height: 92px;
     width:100%;
-    background-color: #ffffff;
+    background-color: white;
 
     position:fixed;
     bottom:0px; 
@@ -121,13 +121,13 @@ body {
 .footer-content {
     width: 364px;
     height: 61px;
-    
+}
+
+.footer-content button {
+    width: 364px;
+    height: 61px;
     background-color: #CBCBCB;
     border-radius: 50px;
-
-    display:flex;
-    justify-content: center;
-    align-items: center;
 }
 
 h1 { /*fonte do logo driveneats*/
