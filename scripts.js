@@ -4,6 +4,8 @@ function updateButton() {
     const dessertSelected = document.querySelector('.box-dessert.greenBorder');
     
     const but = document.querySelector('button');
+    but.disabled = true;
+
     if(foodSelected && drinkSelected && dessertSelected) {
         but.classList.add("buttonActive");
         but.innerHTML = "<p>Finalizar pedido</p>"
@@ -19,6 +21,16 @@ function selectFood(thisBox) {
     }
     
     thisBox.classList.add("greenBorder");
+
+    const checked = document.querySelector('.iconFood.appear');
+    
+    if(checked !== null){
+        checked.classList.remove("appear");
+    }
+
+    const check = thisBox.querySelector('.iconFood');
+    check.classList.add("appear");
+   
     updateButton();
 }
 
@@ -30,6 +42,16 @@ function selectDrink(thisBox) {
     }
     
     thisBox.classList.add("greenBorder");
+
+    const checked = document.querySelector('.iconDrink.appear');
+    
+    if(checked !== null){
+        checked.classList.remove("appear");
+    }
+
+    const check = thisBox.querySelector('.iconDrink');
+    check.classList.add("appear");
+
     updateButton();
 }
 
@@ -41,5 +63,15 @@ function selectDessert(thisBox) {
     }
     
     thisBox.classList.add("greenBorder");
+
+    const checked = document.querySelector('.iconDessert.appear');
+    
+    if(checked !== null){
+        checked.classList.remove("appear");
+    }
+
+    const check = thisBox.querySelector('.iconDessert');
+    check.classList.add("appear");
+
     updateButton();
 }
