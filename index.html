@@ -15,6 +15,31 @@
     <title>DrivenEats</title>
 </head>
 <body>
+    <div class="modal hidden">
+        <div class="modal-content">
+            <h1>Confirme seu pedido</h1>
+            <div class="modal-content-order">
+                <div class="modal-content-order-item">
+                    <h2 class="modalFood"></h2>
+                    <h2 class="modalFoodPrice"></h2>
+                </div>
+                <div class="modal-content-order-item">
+                    <h2 class="modalDrink"></h2>
+                    <h2 class="modalDrinkPrice"></h2>
+                </div>
+                <div class="modal-content-order-item">
+                    <h2 class="modalDessert"></h2>
+                    <h2 class="modalDessertPrice"></h2>
+                </div>
+                <div class="modal-content-order-item">
+                    <h3>TOTAL</h3>
+                    <h3 class="modalTotal"></h3>
+                </div>
+            </div>
+            <button class="modal-content-button" onclick="closeOrder()">Tudo certo, pode pedir!</button>
+            <button class="modal-content-cancel" onclick="cancel()">Cancelar</button>
+        </div>
+    </div>
     <div class="header">
         <div class="header-content">
             <h1>DrivenEats</h1>
@@ -121,7 +146,7 @@
     </div>
     <div class="footer">
         <div class="footer-content">
-            <button type="button" disabled onclick="sendWpp()">
+            <button type="button" class="lastButton" disabled onclick="modalRevise()">
                 <p>Selecione os 3 itens para fechar o pedido</p>
             </button>
         </div>

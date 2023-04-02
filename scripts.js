@@ -3,7 +3,7 @@ function updateButton() {
     const drinkSelected = document.querySelector('.box-drink.greenBorder');
     const dessertSelected = document.querySelector('.box-dessert.greenBorder');
     
-    const but = document.querySelector('button');
+    const but = document.querySelector('.lastButton');
     but.disabled = true;
 
     if(foodSelected && drinkSelected && dessertSelected) {
@@ -122,18 +122,63 @@ function getTotal() {
     return totalCalc.toFixed(2);
 }
 
-function sendWpp(/*const name, const address*/) {
+function sendWpp(name, address) {
     const whichFood = getFood();
     const whichDrink = getDrink();
     const whichDessert = getDessert();
     const total = getTotal();
     
-    const bruteText="Olá, gostaria de fazer o pedido: \n- Prato: "+whichFood+"\n- Bebida: "+whichDrink+"\n- Sobremesa: "+whichDessert+"\nTotal: R$ "+total;
+    const bruteText="Olá, gostaria de fazer o pedido: \n- Prato: "+whichFood+"\n- Bebida: "+whichDrink+"\n- Sobremesa: "+whichDessert+"\nTotal: R$ "+total+"\n\nNome: "+name+"\nEndereço: "+address;
     const msgWpp = encodeURIComponent(bruteText);
     
     window.location='https://wa.me/5551982420112?text='+msgWpp;
 }
 
-/*function closeOrder() {
-    prompt
-}*/
+function modalRevise() {
+    const modal = document.querySelector('.modal');
+    modal.classList.remove("hidden")
+
+    const foodSelected = document.querySelector('.box-food.greenBorder');
+    const foodSelectedText = foodSelected.querySelector('h4').innerHTML;
+    const foodSelectedPrice = foodSelected.querySelector('h6').innerHTML;
+    
+    const drinkSelected = document.querySelector('.box-drink.greenBorder');
+    const drinkSelectedText = drinkSelected.querySelector('h4').innerHTML;
+    const drinkSelectedPrice = drinkSelected.querySelector('h6').innerHTML;
+    
+    const dessertSelected = document.querySelector('.box-dessert.greenBorder');
+    const dessertSelectedText = dessertSelected.querySelector('h4').innerHTML;
+    const dessertSelectedPrice = dessertSelected.querySelector('h6').innerHTML;
+
+    const foodPrice = Number(foodSelectedPrice.replace(/\D/g, ''));
+    const drinkPrice = Number(drinkSelectedPrice.replace(/\D/g, ''))
+    const dessertPrice = Number(dessertSelectedPrice.replace(/\D/g, ''));
+
+    const totalCalc = (foodPrice+drinkPrice+dessertPrice) / 100;
+
+    const total = totalCalc.toFixed(2);
+
+    document.querySelector('.modalFood').innerHTML = foodSelectedText;
+    document.querySelector('.modalFoodPrice').innerHTML = foodSelectedPrice;
+
+    document.querySelector('.modalDrink').innerHTML = drinkSelectedText;
+    document.querySelector('.modalDrinkPrice').innerHTML = drinkSelectedPrice;
+
+    document.querySelector('.modalDessert').innerHTML = dessertSelectedText;
+    document.querySelector('.modalDessertPrice').innerHTML = dessertSelectedPrice;
+
+    document.querySelector('.modalTotal').innerHTML = "R$ "+total;
+}
+
+function closeOrder() {
+    const name = prompt("Qual o seu nome?") ;
+    const address = prompt("Qual o endereço de entrega?");
+
+
+    sendWpp(name,address);
+}
+
+function cancel() {
+    const modal = document.querySelector('.modal');
+    modal.classList.add("hidden");
+}

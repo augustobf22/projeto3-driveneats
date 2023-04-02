@@ -213,6 +213,119 @@ ion-icon {
     display:none;
 }
 
+.modal {
+    height:100%;
+    width:100%;
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index:3;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .appear {
     display:initial;
+}
+
+.hidden {
+    display:none;
+}
+
+.modal-content {
+    display: inherit;
+    width:377px;
+    height:353px;
+    background-color:#50D074;
+    z-index:4;
+
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
+}
+
+.modal-content-order{
+    display: flex;
+    flex-direction:column;
+    align-items:space-around;
+
+    width:100%;
+    margin: 25px ;
+}
+
+.modal-content-order-item {
+    display: flex;
+    justify-content:space-between;
+
+    margin: 7px 25px;
+}
+
+.modal-content h1 { /*confirme pedido*/
+    margin-top:20px;
+
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+}
+
+.modal-content h2 { /*pratos*/
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.modal-content h3 { /*total*/
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.modal-content-button { /*tudo certo*/
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+    text-align: center;
+    color: rgba(80, 208, 116, 1);
+
+    background-color: rgba(255, 255, 255, 1);
+    border-radius:100px;
+    border:none;
+    width: 329px;
+    height: 52px;
+}
+
+.modal-content-cancel { /*cancelar*/
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0.018em;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+
+    background-color: rgba(80, 208, 116, 1);
+    width: 329px;
+    height: 52px;
+    border:none;
 }
