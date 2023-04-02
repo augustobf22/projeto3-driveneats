@@ -8,7 +8,7 @@ function updateButton() {
 
     if(foodSelected && drinkSelected && dessertSelected) {
         but.classList.add("buttonActive");
-        but.innerHTML = "<p>Finalizar pedido</p>"
+        but.innerHTML = "<p>Fechar pedido</p>"
         but.disabled = false;
     }
 }
